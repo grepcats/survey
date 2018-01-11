@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var numAddr = 0;
   $("form#survey").submit(function(event){
     event.preventDefault();
     var userName = $("input#name").val();
@@ -7,19 +8,23 @@ $(document).ready(function(){
     var faveColor = $("#fave-color").val();
     var userTrack = $("#track").val();
 
-    $("#answers").append('<li class="nameLabel">'+userName+"</li>")
-    $("#answers").append("<li>"+userDob+"</li>");
-    $("#answers").append("<li>"+userAnimal+"</li>");
-    $("#answers").append("<li>"+faveColor+"</li>");
-    $("#answers").append("<li>"+userTrack+"</li>");
+    numAddr++;
 
+    $("#answers").append("<ul class='num"+numAddr+"'>");
+    $(".num"+numAddr).append('<li class="colorLabel nameLabel'+numAddr+'">'+userName+"</li>");
+    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userDob+"</li>");
+    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userAnimal+"</li>");
+    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+faveColor+"</li>");
+    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userTrack+"</li>");
+
+    $(".colorLabel").click(function() {
+      $(this).siblings().toggle();
+    });
   //  $("#answers").mouseover(function(){
   //    $("#answers").css("background-color", faveColor);
   //  });
 //    $("#answers").mouseout(function(){
   //    $("#answers").css("background-color", "white");
   });
-  $(".nameLabel").click(function(){
-    console.log("hello");
-  });
+
 });
