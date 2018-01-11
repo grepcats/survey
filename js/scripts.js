@@ -20,13 +20,5 @@ $(document).ready(function(){
     $(".colorLabel").unbind().click(function() {
       $(this).siblings().toggle();
     });
-  //  $("#answers").mouseover(function(){
-  //    $("#answers").css("background-color", faveColor);
-  //  });
-//    $("#answers").mouseout(function(){
-  //    $("#answers").css("background-color", "white");
-
-  //$(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userDob+"</li>");
   });
-
 });
