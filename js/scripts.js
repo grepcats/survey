@@ -11,13 +11,13 @@ $(document).ready(function(){
     numAddr++;
 
     $("#answers").append("<ul class='num"+numAddr+"'>");
-    $(".num"+numAddr).append('<li class="colorLabel nameLabel'+numAddr+'">'+userName+"</li>");
-    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userDob+"</li>");
-    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userAnimal+"</li>");
-    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+faveColor+"</li>");
-    $(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userTrack+"</li>");
+    $(".num"+numAddr).append('<li class="colorLabel">'+userName+"</li>");
+    $(".num"+numAddr).append("<li>"+userDob+"</li>");
+    $(".num"+numAddr).append("<li>"+userAnimal+"</li>");
+    $(".num"+numAddr).append("<li>"+faveColor+"</li>");
+    $(".num"+numAddr).append("<li>"+userTrack+"</li>");
 
-    $(".colorLabel").click(function() {
+    $(".colorLabel").unbind().click(function() {
       $(this).siblings().toggle();
     });
   //  $("#answers").mouseover(function(){
@@ -25,6 +25,8 @@ $(document).ready(function(){
   //  });
 //    $("#answers").mouseout(function(){
   //    $("#answers").css("background-color", "white");
+
+  //$(".num"+numAddr).append("<li class='child"+numAddr+"'>"+userDob+"</li>");
   });
 
 });
